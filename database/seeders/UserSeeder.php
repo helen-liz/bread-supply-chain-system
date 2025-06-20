@@ -11,12 +11,14 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         // Admin Users
-        User::create([
-            'name' => 'System Administrator',
-            'email' => 'admin@bimbo.com',
-            'password' => Hash::make('Admin@123!'),
-            'role' => 'admin',
-        ]);
+        User::updateOrCreate(
+            ['email' => 'admin@bimbo.com'],
+            [
+                'name' => 'System Administrator',
+                'password' => bcrypt('Admin@123!'),
+                'role' => 'admin',
+            ]
+        );
 
         User::create([
             'name' => 'IT Manager',

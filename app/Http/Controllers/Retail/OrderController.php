@@ -9,7 +9,10 @@ class OrderController extends Controller
 {
     public function index()
     {
-        return view('retail.orders');
+        $ordersOverTimeLabels = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+        $ordersOverTimeData = [12, 19, 3, 5, 2];
+        // ...fetch other data...
+        return view('dashboard', compact('ordersOverTimeLabels', 'ordersOverTimeData'));
     }
 
     public function create()
@@ -44,4 +47,4 @@ class OrderController extends Controller
         // TODO: Implement order deletion logic
         return redirect()->route('retail.orders.index')->with('success', 'Order deleted successfully.');
     }
-} 
+}

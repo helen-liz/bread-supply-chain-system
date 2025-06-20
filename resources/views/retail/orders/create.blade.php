@@ -97,8 +97,8 @@
                         @enderror
                     </div>
 
-                    <div class="flex justify-end">
-                        <button type="submit" class="bg-primary text-white px-4 py-2 rounded-md hover:bg-primary/90 transition-colors">
+                    <div class="flex justify-end mt-8">
+                        <button type="submit" class="w-full md:w-auto bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors font-semibold text-lg">
                             Place Order
                         </button>
                     </div>
