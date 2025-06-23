@@ -10,43 +10,80 @@ class UserSeeder extends Seeder
 {
     public function run(): void
     {
-        // Admin User
+        // Admin Users
+        User::updateOrCreate(
+            ['email' => 'admin@bimbo.com'],
+            [
+                'name' => 'System Administrator',
+                'password' => bcrypt('Admin@123!'),
+                'role' => 'admin',
+            ]
+        );
+
         User::create([
-            'name' => 'Admin User',
-            'email' => 'admin@bimbo.com',
-            'password' => Hash::make('admin123'),
+            'name' => 'IT Manager',
+            'email' => 'it.manager@bimbo.com',
+            'password' => Hash::make('IT@123!'),
             'role' => 'admin',
         ]);
 
-        // Supplier User
+        // Supplier Users
         User::create([
-            'name' => 'Supplier User',
+            'name' => 'John Smith',
             'email' => 'supplier@bimbo.com',
-            'password' => Hash::make('supplier123'),
+            'password' => Hash::make('Supplier@123!'),
             'role' => 'supplier',
         ]);
 
-        // Bakery Manager
         User::create([
-            'name' => 'Bakery Manager',
+            'name' => 'Sarah Johnson',
+            'email' => 'sarah.supplier@bimbo.com',
+            'password' => Hash::make('Supplier@123!'),
+            'role' => 'supplier',
+        ]);
+
+        // Bakery Managers
+        User::create([
+            'name' => 'Michael Brown',
             'email' => 'bakery@bimbo.com',
-            'password' => Hash::make('bakery123'),
+            'password' => Hash::make('Bakery@123!'),
             'role' => 'bakery_manager',
         ]);
 
-        // Distributor
         User::create([
-            'name' => 'Distributor User',
+            'name' => 'Emily Davis',
+            'email' => 'emily.bakery@bimbo.com',
+            'password' => Hash::make('Bakery@123!'),
+            'role' => 'bakery_manager',
+        ]);
+
+        // Distributors
+        User::create([
+            'name' => 'Robert Wilson',
             'email' => 'distributor@bimbo.com',
-            'password' => Hash::make('distributor123'),
+            'password' => Hash::make('Distributor@123!'),
             'role' => 'distributor',
         ]);
 
-        // Retail Manager
         User::create([
-            'name' => 'Retail Manager',
+            'name' => 'Lisa Anderson',
+            'email' => 'lisa.distributor@bimbo.com',
+            'password' => Hash::make('Distributor@123!'),
+            'role' => 'distributor',
+        ]);
+
+        // Retail Managers
+        User::create([
+            'name' => 'David Taylor',
             'email' => 'retail@bimbo.com',
-            'password' => Hash::make('retail123'),
+            'password' => Hash::make('Retail@123!'),
+            'role' => 'retail_manager',
+        ]);
+
+        User::create([
+            'name' => 'Jennifer Martinez',
+            'email' => 'jennifer.retail@bimbo.com',
+            'password' => Hash::make('Retail@123!'),
             'role' => 'retail_manager',
         ]);
     }

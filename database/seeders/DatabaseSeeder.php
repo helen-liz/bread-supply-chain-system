@@ -20,5 +20,10 @@ class DatabaseSeeder extends Seeder
             AdminUserSeeder::class,
             VendorSeeder::class,
         ]);
+
+        // Seed test orders if Order model and factory exist
+        if (class_exists(\App\Models\Order::class)) {
+            \App\Models\Order::factory()->count(10)->create();
+        }
     }
 }
